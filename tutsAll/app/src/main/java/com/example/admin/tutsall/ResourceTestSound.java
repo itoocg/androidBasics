@@ -1,25 +1,21 @@
 package com.example.admin.tutsall;
 
+import android.media.MediaPlayer;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import android.app.Activity;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class MediaPlayerGg extends AppCompatActivity {
-    private Button b1,b2,b3,b4,b5, b6;
+public class ResourceTestSound extends AppCompatActivity {
+
+    private Button b1,b2,b3,b4,b5;
     private ImageView iv;
     private MediaPlayer mediaPlayer,mediaPlayer2;
 
@@ -32,11 +28,12 @@ public class MediaPlayerGg extends AppCompatActivity {
     private SeekBar seekbar;
     private TextView tx1,tx2,tx3;
     public static int oneTimeOnly = 0;
-    int [] resID = {R.raw.song, R.raw.song2};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_media_player_gg);
+        setContentView(R.layout.activity_resource_test_sound);
+
 
         b1 =  findViewById(R.id.button2);
         b2 =  findViewById(R.id.button3);
@@ -51,18 +48,16 @@ public class MediaPlayerGg extends AppCompatActivity {
         tx3.setText("Song.mp3");
 
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.song);
-        mediaPlayer2 = MediaPlayer.create(getApplicationContext(), R.raw.song2);
+        mediaPlayer2 = MediaPlayer.create(getApplicationContext(), R.raw.song);
         seekbar = (SeekBar)findViewById(R.id.seekBar2);
         seekbar.setClickable(false);
         b2.setEnabled(false);
-
-
 
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Playing sound",Toast.LENGTH_SHORT).show();
-                        mediaPlayer.start();
+                mediaPlayer.start();
 
                 finalTime = mediaPlayer.getDuration();
                 startTime = mediaPlayer.getCurrentPosition();
@@ -97,7 +92,7 @@ public class MediaPlayerGg extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Pausing sound",Toast.LENGTH_SHORT).show();
-                        mediaPlayer.pause();
+                mediaPlayer.pause();
                 b2.setEnabled(false);
                 b3.setEnabled(true);
             }
@@ -139,14 +134,7 @@ public class MediaPlayerGg extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mediaPlayer.stop();
-                mediaPlayer.reset();
-                mediaPlayer = MediaPlayer.create(getApplicationContext(), resID[1]);
-               // mediaPlayer.release();
-
-
-                mediaPlayer.start();
-
-               // mediaPlayer.setDataSource(getApplicationContext(), R.raw.song2);
+                // mediaPlayer.setDataSource(getApplicationContext(), R.raw.song2);
             }
         });
 
@@ -166,4 +154,6 @@ public class MediaPlayerGg extends AppCompatActivity {
             myHandler.postDelayed(this, 100);
         }
     };
+
+
 }

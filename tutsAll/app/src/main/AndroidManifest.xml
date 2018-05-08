@@ -3,7 +3,9 @@
     package="com.example.admin.tutsall">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -19,12 +21,17 @@
         <activity android:name=".DragDrag" />
         <activity android:name=".LayoutTest" />
         <activity android:name=".CustomListTest" />
-        <activity android:name=".GesGestureGes"></activity>
-        <activity android:name=".MediaPlayerGg"></activity>
-        <activity android:name=".PlayAudioExample">
+        <activity android:name=".GesGestureGes" />
+        <activity android:name=".MediaPlayerGg">
 
         </activity>
-        <activity android:name=".CamCamCa">
+        <activity android:name=".PlayAudioExample" />
+        <activity android:name=".CamCamCa" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".ResourceTest"></activity>
+        <activity android:name=".ResourceTestSound"></activity>
+        <activity android:name=".MediaPlayerList"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
