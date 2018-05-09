@@ -6,6 +6,7 @@
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -22,16 +23,21 @@
         <activity android:name=".LayoutTest" />
         <activity android:name=".CustomListTest" />
         <activity android:name=".GesGestureGes" />
-        <activity android:name=".MediaPlayerGg">
-
-        </activity>
+        <activity android:name=".MediaPlayerGg" />
         <activity android:name=".PlayAudioExample" />
         <activity android:name=".CamCamCa" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".ResourceTest"></activity>
-        <activity android:name=".ResourceTestSound"></activity>
-        <activity android:name=".MediaPlayerList"
-            android:screenOrientation="portrait">
+        <activity android:name=".ResourceTest" />
+        <activity android:name=".ResourceTestSound" />
+        <activity
+            android:name=".MediaPlayerList"
+            android:screenOrientation="portrait" />
+        <activity android:name=".CamPractise"></activity>
+        <activity android:name=".spinnerG" />
+        <activity android:name=".Alrm">
+
+        </activity>
+        <activity android:name=".snapGsnap">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
